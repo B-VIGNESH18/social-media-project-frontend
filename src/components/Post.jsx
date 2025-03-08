@@ -1,4 +1,5 @@
 
+
 import React, { useState, useContext, useEffect } from "react";
 import { 
   Card, 
@@ -18,16 +19,16 @@ import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt"; // Outlined i
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import { AuthContext } from "../context/AuthContext";
 import API from "../utils/api";
-import "./Post.css"; // Import our custom CSS
+// import "./Post.css"; // Import our custom CSS for posts
 
 const Post = ({ post, onDelete = () => {}, onLikeToggle }) => {
-  // Build image URL from backend response (support both property names)
+  // Build image URL from backend response (supports both property names)
   const actualImagePath = post.imageUrl || post.image_url;
   const imageSrc = actualImagePath 
     ? `http://localhost:5000${actualImagePath}` 
     : "https://placehold.co/345x200?text=No+Image";
 
-  // Like state
+  // Like state management
   const { user: currentUser } = useContext(AuthContext);
   const [liked, setLiked] = useState(post.liked || false);
   const [likeCount, setLikeCount] = useState(post.likeCount || 0);
@@ -38,7 +39,7 @@ const Post = ({ post, onDelete = () => {}, onLikeToggle }) => {
   const [showComments, setShowComments] = useState(false);
   const [commentText, setCommentText] = useState("");
 
-  // Fetch comments when comments are toggled on
+  // Fetch comments when comment section is toggled on
   useEffect(() => {
     if (showComments) {
       fetchComments();
@@ -87,7 +88,6 @@ const Post = ({ post, onDelete = () => {}, onLikeToggle }) => {
         { postId: post.id, content: commentText },
         { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
       );
-      // Append new comment to the list
       setComments([...comments, res.data]);
       setCommentText("");
     } catch (error) {
@@ -119,12 +119,14 @@ const Post = ({ post, onDelete = () => {}, onLikeToggle }) => {
           {liked ? <ThumbUpAltIcon color="primary" /> : <ThumbUpOffAltIcon color="primary" />}
         </IconButton>
         <Tooltip title={likedBy.length > 0 ? likedBy.join(", ") : "No likes yet"}>
-          <Typography variant="body2">{likeCount}</Typography>
+          <Typography variant="body2" className="like-count">{likeCount}</Typography>
         </Tooltip>
         <IconButton onClick={toggleComments} aria-label="toggle comments">
           <ChatBubbleOutlineIcon color="primary" />
         </IconButton>
-        <Typography variant="body2">{comments.length || post.commentCount || 0}</Typography>
+        <Typography variant="body2" className="comment-count">
+          {comments.length || post.commentCount || 0}
+        </Typography>
       </CardActions>
       {showComments && (
         <Box className="post-comments">
@@ -155,4 +157,3 @@ const Post = ({ post, onDelete = () => {}, onLikeToggle }) => {
 };
 
 export default Post;
-
