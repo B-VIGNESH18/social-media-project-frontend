@@ -1,0 +1,59 @@
+/* Post.css */
+
+.post-card {
+    max-width: 345px;
+    margin: 16px auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.post-media {
+    height: 200px;
+    object-fit: contain;
+    width: 100%;
+}
+
+.post-content {
+    padding: 16px;
+}
+
+.post-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+    border-top: 1px solid #eee;
+}
+
+.post-actions .MuiIconButton-root {
+    padding: 4px;
+}
+
+.post-comments {
+    padding: 16px;
+    background-color: #f9f9f9;
+}
+
+.comments-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.comment-item {
+    margin-bottom: 8px;
+}
+
+.comment-form {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}

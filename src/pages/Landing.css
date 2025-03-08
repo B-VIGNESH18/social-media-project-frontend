@@ -1,0 +1,53 @@
+/* Global styles to cover the entire viewport */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    /* Optional: set a default font */
+}
+
+/* Landing.css */
+.landing-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    /* background: linear-gradient(135deg, #19a8f5, #115ff1); */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.landing-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.landing-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+}
+
+.landing-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.landing-button {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 30px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.landing-button:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}

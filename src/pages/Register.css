@@ -1,0 +1,77 @@
+/* Global Body Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container for the Register Page */
+.register-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Glassmorphism Card for the Form */
+.register-form {
+    width: 100%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 2rem;
+    color: #fff;
+}
+
+/* Title Styling */
+.register-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+/* Spacing for TextFields */
+.register-textfield {
+    margin-bottom: 1.2rem;
+}
+
+/* Custom Button Styling */
+.register-button {
+    width: 100%;
+    padding: 12px;
+    background: #ff5f6d;
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.register-button:hover {
+    background: #ff3d54;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .register-form {
+        padding: 1.5rem;
+    }
+
+    .register-title {
+        font-size: 1.8rem;
+    }
+}
