@@ -25,7 +25,7 @@ const Post = ({ post, onDelete = () => {}, onLikeToggle }) => {
   // Build image URL from backend response (supports both property names)
   const actualImagePath = post.imageUrl || post.image_url;
   const imageSrc = actualImagePath 
-    ? `http://localhost:5000${actualImagePath}` 
+    ? `https://social-media-project-backend-1.onrender.com${actualImagePath}` 
     : "https://placehold.co/345x200?text=No+Image";
 
   // Like state management
